@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produtos | Grão & Cia</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="script.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+  <header class="bg-parchment border-b border-line">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-5 flex items-center justify-between gap-4">
+      <a href="index.html" class="font-display text-xl md:text-2xl font-semibold text-bark">Grão &amp; Cia</a>
+      <a href="index.html" class="text-sm font-semibold text-bark hover:text-terracotta transition-colors">Voltar para a página inicial</a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-20">
+    <div class="mb-10">
+      <p class="text-terracotta font-semibold text-sm uppercase tracking-[0.18em] mb-3">Catálogo</p>
+      <h1 id="titulo-categoria" class="font-display text-4xl md:text-5xl font-semibold text-bark mb-3">Produtos</h1>
+      <p id="descricao-categoria" class="text-coffee max-w-2xl">Confira nossa seleção de produtos.</p>
+    </div>
+    <div id="lista-produtos" class="grid md:grid-cols-3 gap-6" aria-live="polite"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

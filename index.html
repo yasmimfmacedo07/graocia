@@ -1,0 +1,462 @@
+<!-- <!DOCTYPE html>> -->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grão & Cia — Comida de verdade, do campo para a sua mesa</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="script.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+<!-- ============ HEADER ============ -->
+<header class="bg-parchment border-b border-line sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex items-center justify-between gap-4 py-4">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 shrink-0" aria-label="Grão & Cia, página inicial">
+        <svg width="36" height="36" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="#3B2A1F" stroke-width="1.5" fill="none"/>
+          <path d="M20 10c3 4 3 7 0 10-3-3-3-6 0-10z" fill="#C89B3C"/>
+          <path d="M20 10c3 4 3 7 0 10" stroke="#3B2A1F" stroke-width="1"/>
+          <path d="M14 22c2 3 4 4 6 4s4-1 6-4" stroke="#B65C38" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <path d="M13 27h14" stroke="#3B2A1F" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <span class="font-display text-xl md:text-2xl font-semibold text-bark leading-none">Grão&nbsp;&amp; Cia</span>
+      </a>
+
+      <!-- Search -->
+      <div class="hidden md:flex flex-1 max-w-md">
+        <label for="busca" class="sr-only">Buscar produtos</label>
+        <div class="relative w-full">
+          <input id="busca" type="search" placeholder="Buscar café, feijão, farinha..."
+            class="w-full rounded-full border border-line bg-white pl-5 pr-11 py-2.5 text-sm placeholder:text-bark/40 focus:border-wheat">
+          <button aria-label="Buscar" class="absolute right-1.5 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-bark text-parchment flex items-center justify-center hover:bg-terracotta transition-colors">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Icons -->
+      <nav aria-label="Conta e sacola" class="flex items-center gap-4 md:gap-5 shrink-0">
+        <a href="#" class="hidden sm:flex flex-col items-center gap-1 text-bark/70 hover:text-terracotta text-[11px]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7.5-4.9-10-9.3C.4 8.4 2 4.5 5.7 4c2.2-.3 4.1.9 6.3 3 2.2-2.1 4.1-3.3 6.3-3 3.7.5 5.3 4.4 3.7 7.7C19.5 16.1 12 21 12 21z"/></svg>
+          Favoritos
+        </a>
+        <a href="#" class="hidden sm:flex flex-col items-center gap-1 text-bark/70 hover:text-terracotta text-[11px]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6"/></svg>
+          Entrar
+        </a>
+        <a href="#" class="flex flex-col items-center gap-1 text-bark hover:text-terracotta text-[11px] relative">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 8h12l-1.2 11.2a2 2 0 01-2 1.8H9.2a2 2 0 01-2-1.8L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+          <span class="absolute -top-1 -right-2 bg-wheat text-bark text-[9px] font-bold rounded-full h-4 w-4 flex items-center justify-center">2</span>
+          Sacola
+        </a>
+      </nav>
+    </div>
+
+    <!-- Category nav -->
+    <nav aria-label="Categorias" class="flex items-center gap-1 overflow-x-auto pb-3 -mt-1 text-sm font-medium">
+      <a href="#quemsomos" class="px-3 py-1.5 rounded-full bg-bark text-parchment whitespace-nowrap">Quem somos</a>
+      <a href="produtos.html?categoria=hortalicas" data-categoria="hortalicas" class="link-categoria px-3 py-1.5 rounded-full text-bark/80 hover:bg-wheat/25 whitespace-nowrap">Hortaliças</a>
+      <a href="produtos.html?categoria=frutas" data-categoria="frutas" class="link-categoria px-3 py-1.5 rounded-full text-bark/80 hover:bg-wheat/25 whitespace-nowrap">Frutas</a>
+      <a href="produtos.html?categoria=vegetais" data-categoria="vegetais" class="link-categoria px-3 py-1.5 rounded-full text-bark/80 hover:bg-wheat/25 whitespace-nowrap">Vegetais</a>
+      <a href="produtos.html?categoria=temperos" data-categoria="temperos" class="link-categoria px-3 py-1.5 rounded-full text-bark/80 hover:bg-wheat/25 whitespace-nowrap">Temperos&nbsp;e&nbsp;especiarias</a>
+      <a href="produtos.html?categoria=graos" data-categoria="graos" class="link-categoria px-3 py-1.5 rounded-full text-bark/80 hover:bg-wheat/25 whitespace-nowrap">Grãos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HISTÓRIA ============ -->
+  <section id="quemsomos" class="max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-20 pb-16">
+    <div class="flex w-full flex-col items-center gap-10 md:gap-16 p-6 md:p-10 text-center">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-terracotta font-semibold text-sm mb-2">Desde 1950 · quatro gerações</p>
+        <h1 class="font-display text-4xl md:text-5xl font-semibold text-bark leading-[1.05] mb-6">
+          Uma história que começou<br class="hidden md:block"> num sítio, não numa vitrine.
+        </h1>
+        <p class="text-coffee leading-relaxed mb-4 max-w-2xl mx-auto">
+          Seu Bento e Dona Maria plantavam milho, feijão e hortaliças com o tempo que a terra pedia — sem
+          pressa, sem atalho. O pão caseiro da Dona Maria virou motivo pra vizinhos atravessarem o bairro.
+        </p>
+        <p class="text-coffee leading-relaxed max-w-2xl mx-auto">
+          Setenta anos, seis gerações de mudança e uma promessa que nunca saiu do lugar:
+          <strong class="text-bark">comida de verdade, do campo para a sua mesa.</strong>
+        </p>
+      </div>
+
+      <figure class="md:col-span-2 w-full max-w-[760px] justify-self-center">
+        <img
+          src="donos.jpg"
+          alt="Seu Bento e Dona Maria"
+          class="block w-full aspect-[16/9] rounded-xl border-2 border-dashed border-terracotta object-cover bg-wheat/20 shadow-sm"
+        >
+        <figcaption class="text-center text-sm text-coffee/70 mt-4 italic">
+          "Seu Bento e Dona Maria no sítio, pouco antes da primeira colheita vendida na feira — 1950."
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8"><div class="stitch-divider"></div></div>
+
+  <!-- ============ NOSSA HISTÓRIA / LINHA DO TEMPO ============ -->
+  <section id="produtos" class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-20">
+    <h2 class="font-display text-3xl md:text-4xl font-semibold text-bark mb-2">Nossa História</h2>
+    <p class="text-coffee/80 mb-10 max-w-md">Seis décadas de história contadas por diferentes gerações.</p>
+
+    <div class="grid md:grid-cols-1 gap-12 items-start">
+
+      <!-- Timeline -->
+      <div class="space-y-8">
+        <div class="relative pl-8 pb-9 pr-2 flex items-center gap-4">
+          <span class="absolute -left-0 top-0.5 h-3.5 w-3.5 rounded-full bg-terracotta"></span>
+          <span class="absolute left-1.5 top-4 bottom-[-12px] timeline-stitch"></span>
+          <div class="flex-1 pr-3">
+            <p class="font-display text-2xl text-terracotta font-semibold mb-1">1950</p>
+            <p class="text-coffee max-w-sm"><strong class="text-bark">As Raízes na Roça:</strong> Seu Bento e Dona Maria iniciam o cultivo no sítio. Com trabalho artesanal, amor à terra e sementes selecionadas, a família produz milho, feijão, hortaliças e o tradicional pão caseiro.</p>
+            <p class="text-coffee max-w-sm mt-2"><strong class="text-bark">Essência:</strong> Alimentação pura, respeito ao tempo da natureza e sustento da família com o que a terra dá de melhor.</p>
+          </div>
+          <div class="w-[320px] h-[240px] shrink-0 overflow-hidden border-[4px] border-red-600 bg-[#f8f4ee] shadow-sm">
+            <img src="anos50.jpg" alt="História de 1950" class="block h-full w-full object-cover" />
+          </div>
+        </div>
+
+        <div class="relative pl-8 pb-9 pr-2 flex items-center gap-4">
+          <span class="absolute -left-0 top-0.5 h-3.5 w-3.5 rounded-full bg-terracotta"></span>
+          <span class="absolute left-1.5 top-4 bottom-[-12px] timeline-stitch"></span>
+          <div class="flex-1 pr-3">
+            <p class="font-display text-2xl text-terracotta font-semibold mb-1">1970</p>
+            <p class="text-coffee max-w-sm"><strong class="text-bark">Da Feira ao Bairro:</strong> Com a fartura das colheitas, a família passa a levar seus produtos para as feiras de rua. O carinho no atendimento e a qualidade dos grãos conquistam a vizinhança.</p>
+            <p class="text-coffee max-w-sm mt-2"><strong class="text-bark">A Primeira Porta:</strong> Nasce a primeira modesta mercearia de bairro, com sacos de juta, potes a granel e o cheiro inconfundível de especiarias e café moído na hora.</p>
+          </div>
+          <div class="w-[320px] h-[240px] shrink-0 overflow-hidden border-[4px] border-red-600 bg-[#f8f4ee] shadow-sm">
+            <img src="anos70.jpg" alt="História de 1970" class="block h-full w-full object-cover" />
+          </div>
+        </div>
+
+        <div class="relative pl-8 pb-9 pr-2 flex items-center gap-4">
+          <span class="absolute -left-0 top-0.5 h-3.5 w-3.5 rounded-full bg-wheat"></span>
+          <span class="absolute left-1.5 top-4 bottom-[-12px] timeline-stitch"></span>
+          <div class="flex-1 pr-3">
+            <p class="font-display text-2xl text-wheat font-semibold mb-1">1980</p>
+            <p class="text-coffee max-w-sm"><strong class="text-bark">Novo Espaço:</strong> A mercearia muda para um imóvel maior para comportar a crescente demanda, ampliando a variedade de farinhas, temperos e grãos a granel.</p>
+            <p class="text-coffee max-w-sm mt-2"><strong class="text-bark">Referência Local:</strong> O ponto se consolida como o local preferido da comunidade para quem busca ingredientes frescos e atendimento familiar.</p>
+          </div>
+          <div class="w-[320px] h-[240px] shrink-0 overflow-hidden border-[4px] border-red-600 bg-[#f8f4ee] shadow-sm">
+            <img src="anos80.jpg" alt="História de 1980" class="block h-full w-full object-cover" />
+          </div>
+        </div>
+
+        <div class="relative pl-8 pb-9 pr-2 flex items-center gap-4">
+          <span class="absolute -left-0 top-0.5 h-3.5 w-3.5 rounded-full bg-wheat"></span>
+          <span class="absolute left-1.5 top-4 bottom-[-12px] timeline-stitch"></span>
+          <div class="flex-1 pr-3">
+            <p class="font-display text-2xl text-wheat font-semibold mb-1">1990</p>
+            <p class="text-coffee max-w-sm"><strong class="text-bark">Recordes e Popularidade:</strong> A marca atinge o topo de vendas na região, tornando-se parada obrigatória para a compra de produtos naturais e artesanais.</p>
+            <p class="text-coffee max-w-sm mt-2"><strong class="text-bark">Visão de Futuro:</strong> Antecipa a busca por uma vida mais saudável, trazendo novos itens orgânicos e funcionais para as prateleiras.</p>
+          </div>
+          <div class="w-[320px] h-[240px] shrink-0 overflow-hidden border-[4px] border-red-600 bg-[#f8f4ee] shadow-sm">
+            <img src="anos90.jpg" alt="História de 1990" class="block h-full w-full object-cover" />
+          </div>
+        </div>
+
+        <div class="relative pl-8 pb-9 pr-2 flex items-center gap-4">
+          <span class="absolute -left-0 top-0.5 h-3.5 w-3.5 rounded-full bg-olive"></span>
+          <span class="absolute left-1.5 top-4 bottom-[-12px] timeline-stitch"></span>
+          <div class="flex-1 pr-3">
+            <p class="font-display text-2xl text-olive font-semibold mb-1">2000</p>
+            <p class="text-coffee max-w-sm"><strong class="text-bark">Nasce a Grão &amp; Cia:</strong> A nova geração da família assume a gestão, estrutura os processos e oficializa a marca Grão &amp; Cia.</p>
+            <p class="text-coffee max-w-sm mt-2"><strong class="text-bark">Modernização Com Propósito:</strong> A loja amplia seu espaço, diversifica o catálogo de produtos e fortalece parcerias com pequenos produtores rurais da região.</p>
+          </div>
+          <div class="w-[320px] h-[240px] shrink-0 overflow-hidden border-[4px] border-red-600 bg-[#f8f4ee] shadow-sm">
+            <img src="anos2000.jpg" alt="História de 2000" class="block h-full w-full object-cover" />
+          </div>
+        </div>
+
+        <div class="relative pl-8 pr-2 flex items-center gap-4">
+          <span class="absolute -left-0 top-0.5 h-3.5 w-3.5 rounded-full bg-bark"></span>
+          <div class="flex-1 pr-3">
+            <p class="font-display text-2xl text-bark font-semibold mb-1">2026</p>
+            <p class="text-coffee max-w-sm"><strong class="text-bark">Inovação e Tecnologia:</strong> A Grão &amp; Cia se consolida como empresa modelo no setor, unindo a tradição do atendimento humano a um moderno sistema de feira online e entregas agendadas.</p>
+            <p class="text-coffee max-w-sm mt-2"><strong class="text-bark">Reconhecimento e Prêmios:</strong> Vencedora de prêmios de excelência em sustentabilidade, logística verde e satisfação do cliente.</p>
+            <p class="text-coffee max-w-sm mt-2"><strong class="text-bark">O Legado Permanece:</strong> Cada entrega carrega a mesma promessa feita em 1950: comida de verdade, do campo para a sua mesa.</p>
+          </div>
+          <div class="w-[320px] h-[240px] shrink-0 overflow-hidden border-[4px] border-red-600 bg-[#f8f4ee] shadow-sm">
+            <img src="anos2026.jpg" alt="História de 2026" class="block h-full w-full object-cover" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PRODUTOS ============ -->
+  <section class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-20">
+    <div class="mb-10 text-center">
+      <p class="text-terracotta font-semibold text-sm uppercase tracking-[0.18em] mb-3">Produtos</p>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-bark">Nossos Produtos</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-5 gap-6">
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#f3e8d6]"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=85" alt="Grãos" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h3 class="font-display text-xl font-semibold text-bark mb-3">Grãos</h3><p class="text-coffee text-sm leading-relaxed">Seleção especial de cafés, cereais integrais e leguminosas nobres.</p></div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#eef2e4]"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=85" alt="Hortaliças" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h3 class="font-display text-xl font-semibold text-bark mb-3">Hortaliças</h3><p class="text-coffee text-sm leading-relaxed">Folhas e verduras frescas de cultivo orgânico e local.</p></div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#f9ebd8]"><img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=900&q=85" alt="Frutas" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h3 class="font-display text-xl font-semibold text-bark mb-3">Frutas</h3><p class="text-coffee text-sm leading-relaxed">Frutas orgânicas da estação, colhidas no ponto ideal.</p></div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#efe6d6]"><img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=900&q=85" alt="Vegetais" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h3 class="font-display text-xl font-semibold text-bark mb-3">Vegetais</h3><p class="text-coffee text-sm leading-relaxed">Raízes, tubérculos e legumes frescos sem agrotóxicos.</p></div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col md:col-span-2 xl:col-span-1">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#f7efe2]"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=85" alt="Temperos e especiarias" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h3 class="font-display text-xl font-semibold text-bark mb-3">Temperos e Especiarias</h3><p class="text-coffee text-sm leading-relaxed">Ervas, especiarias puras e blends artesanais.</p></div>
+      </article>
+    </div>
+
+    <div class="space-y-14 hidden">
+      <div id="graos" class="scroll-mt-32">
+        <h3 class="font-display text-2xl font-semibold text-bark mb-5">Grãos</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#f3e8d6]">
+          <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=85" alt="Café especial em grãos" class="w-full h-full object-cover">
+        </div>
+        <div class="p-5">
+          <h4 class="font-display text-xl font-semibold text-bark mb-3">Café especial</h4>
+          <p class="text-coffee text-sm leading-relaxed">Grãos selecionados de alta altitude, com aroma intenso e torra cuidadosa.</p>
+        </div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#f3e8d6]">
+          <img src="https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=900&q=85" alt="Quinoa" class="w-full h-full object-cover">
+        </div>
+        <div class="p-5">
+          <h4 class="font-display text-xl font-semibold text-bark mb-3">Quinoa</h4>
+          <p class="text-coffee text-sm leading-relaxed">Quinoa integral para receitas nutritivas, leves e cheias de sabor.</p>
+        </div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#f3e8d6]">
+          <img src="https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=900&q=85" alt="Lentilhas" class="w-full h-full object-cover">
+        </div>
+        <div class="p-5">
+          <h4 class="font-display text-xl font-semibold text-bark mb-3">Lentilhas</h4>
+          <p class="text-coffee text-sm leading-relaxed">Leguminosa selecionada para sopas, saladas e acompanhamentos.</p>
+        </div>
+      </article>
+        </div>
+      </div>
+
+      <div id="hortalicas" class="scroll-mt-32">
+        <h3 class="font-display text-2xl font-semibold text-bark mb-5">Hortaliças</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#eef2e4]"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=85" alt="Alface crespa" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h4 class="font-display text-xl font-semibold text-bark mb-3">Alface crespa</h4><p class="text-coffee text-sm leading-relaxed">Folhas crocantes e frescas, colhidas diariamente de produtores locais.</p></div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#eef2e4]"><img src="https://images.unsplash.com/photo-1524593166158-2d7f9c9f7a4b?auto=format&fit=crop&w=900&q=85" alt="Couve orgânica" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h4 class="font-display text-xl font-semibold text-bark mb-3">Couve orgânica</h4><p class="text-coffee text-sm leading-relaxed">Couve de cultivo orgânico para sucos, refogados e receitas caseiras.</p></div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#eef2e4]"><img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=85" alt="Rúcula" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h4 class="font-display text-xl font-semibold text-bark mb-3">Rúcula</h4><p class="text-coffee text-sm leading-relaxed">Folhas aromáticas para saladas, sanduíches e pratos especiais.</p></div>
+      </article>
+        </div>
+      </div>
+
+      <div id="frutas" class="scroll-mt-32">
+        <h3 class="font-display text-2xl font-semibold text-bark mb-5">Frutas</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#f9ebd8]"><img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=900&q=85" alt="Banana prata" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h4 class="font-display text-xl font-semibold text-bark mb-3">Banana prata</h4><p class="text-coffee text-sm leading-relaxed">Fruta doce e macia, ideal para o café da manhã ou lanches rápidos.</p></div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#f9ebd8]"><img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=900&q=85" alt="Manga palmer" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h4 class="font-display text-xl font-semibold text-bark mb-3">Manga palmer</h4><p class="text-coffee text-sm leading-relaxed">Manga suculenta, sem fibras e colhida no ponto ideal de maturação.</p></div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#f9ebd8]"><img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=900&q=85" alt="Morangos" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h4 class="font-display text-xl font-semibold text-bark mb-3">Morangos</h4><p class="text-coffee text-sm leading-relaxed">Morangos frescos e delicados para sobremesas, vitaminas e geleias.</p></div>
+      </article>
+        </div>
+      </div>
+
+      <div id="vegetais" class="scroll-mt-32">
+        <h3 class="font-display text-2xl font-semibold text-bark mb-5">Vegetais</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#efe6d6]"><img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=900&q=85" alt="Cenouras" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h4 class="font-display text-xl font-semibold text-bark mb-3">Cenouras</h4><p class="text-coffee text-sm leading-relaxed">Cenouras firmes e doces, ótimas cruas, assadas ou em sopas.</p></div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#efe6d6]"><img src="https://images.unsplash.com/photo-1575382955146-2c6f7b5a1ef1?auto=format&fit=crop&w=900&q=85" alt="Beterrabas" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h4 class="font-display text-xl font-semibold text-bark mb-3">Beterrabas</h4><p class="text-coffee text-sm leading-relaxed">Raízes vibrantes e nutritivas para saladas, sucos e acompanhamentos.</p></div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#efe6d6]"><img src="https://images.unsplash.com/photo-1563252722-6434563a985d?auto=format&fit=crop&w=900&q=85" alt="Abobrinhas" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h4 class="font-display text-xl font-semibold text-bark mb-3">Abobrinhas</h4><p class="text-coffee text-sm leading-relaxed">Abobrinhas tenras para grelhados, massas e pratos do dia a dia.</p></div>
+      </article>
+        </div>
+      </div>
+
+      <div id="temperos" class="scroll-mt-32">
+        <h3 class="font-display text-2xl font-semibold text-bark mb-5">Temperos e especiarias</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#f7efe2]"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=85" alt="Cúrcuma" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h4 class="font-display text-xl font-semibold text-bark mb-3">Cúrcuma</h4><p class="text-coffee text-sm leading-relaxed">Especiaria dourada para dar cor, aroma e sabor às receitas.</p></div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#f7efe2]"><img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=900&q=85" alt="Pimenta-do-reino" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h4 class="font-display text-xl font-semibold text-bark mb-3">Pimenta-do-reino</h4><p class="text-coffee text-sm leading-relaxed">Pimenta aromática para finalizar carnes, legumes e molhos.</p></div>
+      </article>
+      <article class="bg-[#f7f0e5] border border-line rounded-2xl overflow-hidden shadow-sm flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden border-b border-line bg-[#f7efe2]"><img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=900&q=85" alt="Orégano" class="w-full h-full object-cover"></div>
+        <div class="p-5"><h4 class="font-display text-xl font-semibold text-bark mb-3">Orégano</h4><p class="text-coffee text-sm leading-relaxed">Erva desidratada para pizzas, massas, saladas e preparos artesanais.</p></div>
+      </article>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section class="bg-bark text-parchment py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold mb-10 text-center">Serviços</h2>
+
+      <div class="grid sm:grid-cols-3 gap-6 md:gap-8">
+        <article class="bg-parchment/[0.06] border border-parchment/15 rounded-2xl p-6 flex flex-col items-center text-center gap-4">
+          <div class="h-16 w-16 rounded-full bg-wheat flex items-center justify-center">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3B2A1F" stroke-width="1.8"><path d="M3 7h13l2 4h3v6h-2"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/><path d="M3 7V4H1"/><path d="M6 17H4a1 1 0 01-1-1v-6"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold">Delivery</h3>
+          <p class="text-parchment/75 text-sm">Seus grãos, farinhas e hortaliças fresquinhos direto na porta de casa.</p>
+        </article>
+
+        <article class="bg-parchment/[0.06] border border-parchment/15 rounded-2xl p-6 flex flex-col items-center text-center gap-4">
+          <div class="h-16 w-16 rounded-full bg-wheat flex items-center justify-center">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3B2A1F" stroke-width="1.8"><path d="M3 10l9-6 9 6"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold">Retirada na loja</h3>
+          <p class="text-parchment/75 text-sm">Compre pela feira online e passe pra pegar, sem fila, no horário que preferir.</p>
+        </article>
+
+        <article class="bg-parchment/[0.06] border border-parchment/15 rounded-2xl p-6 flex flex-col items-center text-center gap-4">
+          <div class="h-16 w-16 rounded-full bg-wheat flex items-center justify-center">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3B2A1F" stroke-width="1.8"><path d="M12 3c3 3 6 5.5 6 9a6 6 0 01-12 0c0-3.5 3-6 6-9z"/><path d="M12 15v6"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold">Degustação</h3>
+          <p class="text-parchment/75 text-sm">Todo sábado, prove os grãos e produtos novos da estação antes de levar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="max-w-4xl mx-auto px-5 md:px-8 py-16 md:py-20 text-center">
+    <h2 class="font-display text-3xl md:text-4xl font-semibold text-bark mb-3">Cadastre-se e receba promoções e ofertas</h2>
+    <p class="text-coffee/80 mb-8 max-w-lg mx-auto">Sem spam — só avisos de colheita nova e as ofertas da semana, direto do campo pra sua caixa de entrada.</p>
+
+    <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto" aria-label="Cadastro de newsletter">
+      <label for="nome" class="sr-only">Nome</label>
+      <input id="nome" type="text" required placeholder="Seu nome"
+        class="flex-1 rounded-full border border-line bg-white px-5 py-3 text-sm focus:border-wheat">
+      <label for="email" class="sr-only">E-mail</label>
+      <input id="email" type="email" required placeholder="Seu e-mail"
+        class="flex-1 rounded-full border border-line bg-white px-5 py-3 text-sm focus:border-wheat">
+      <button type="submit" class="rounded-full bg-terracotta text-parchment font-semibold px-7 py-3 text-sm hover:bg-bark transition-colors">
+        Inscrever-se
+      </button>
+    </form>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8"><div class="stitch-divider"></div></div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-parchment pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12">
+
+      <!-- Endereço -->
+      <div>
+        <h3 class="font-display text-xl font-semibold text-bark mb-4">Endereço</h3>
+        <div class="flex gap-3 mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B2A1F" stroke-width="1.8" class="mt-0.5 shrink-0"><path d="M12 21s7-6.4 7-12a7 7 0 10-14 0c0 5.6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div class="text-sm text-coffee">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+do+Sitio%2C+50%2C+Centro" target="_blank" rel="noopener noreferrer" class="hover:text-terracotta transition-colors">Rua do Sítio, 50 — Centro</a>
+            <p>Atendimento: Seg a Sex, 8h às 17h</p>
+          </div>
+        </div>
+        <ul class="space-y-2 text-sm text-coffee">
+          <li class="flex items-center gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B2A1F" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2C9.6 21 3 14.4 3 6a2 2 0 012-2z"/></svg>
+            (27) 3222-1122
+          </li>
+          <li class="flex items-center gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B2A1F" stroke-width="1.8"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><circle cx="12" cy="12" r="9.5"/></svg>
+            (27) 9 8877-1122
+          </li>
+          <li class="flex items-center gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B2A1F" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            contato@graoecia.com.br
+          </li>
+        </ul>
+      </div>
+
+      <!-- Redes sociais e pagamentos -->
+      <div class="md:text-right">
+        <h3 class="font-display text-xl font-semibold text-bark mb-4">Redes sociais</h3>
+        <div class="flex md:justify-end gap-3 mb-8">
+          <a href="#" aria-label="Facebook" class="h-10 w-10 rounded-full border border-line flex items-center justify-center text-bark hover:bg-wheat/25">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H17V3.7C16.6 3.65 15.3 3.5 13.9 3.5c-2.9 0-4.9 1.77-4.9 5v2.4H6.3V14H9v7h4.5z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="h-10 w-10 rounded-full border border-line flex items-center justify-center text-bark hover:bg-wheat/25">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="h-10 w-10 rounded-full border border-line flex items-center justify-center text-bark hover:bg-wheat/25">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="3"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+
+        <h3 class="font-display text-xl font-semibold text-bark mb-4">Formas de pagamento</h3>
+        <div class="flex md:justify-end gap-3 flex-wrap">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-line text-sm text-coffee">
+            <svg class="text-bark" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.2 6.4 6.4a2 2 0 0 1-2.8 2.8L12 7.8 8.4 11.4a2 2 0 0 1-2.8-2.8L12 2.2Z"/><path d="m12 21.8-6.4-6.4a2 2 0 0 1 2.8-2.8l3.6 3.6 3.6-3.6a2 2 0 0 1 2.8 2.8L12 21.8Z"/><path d="m2.2 12 6.4-6.4a2 2 0 0 1 2.8 2.8L7.8 12l3.6 3.6a2 2 0 0 1-2.8 2.8L2.2 12Z"/><path d="m21.8 12-6.4 6.4a2 2 0 0 1-2.8-2.8l3.6-3.6-3.6-3.6a2 2 0 0 1 2.8-2.8l6.4 6.4Z"/></svg>
+            Pix
+          </span>
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-line text-sm text-coffee">
+            <svg class="text-bark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h3"/><rect x="15" y="12" width="3" height="3" rx=".5"/></svg>
+            Cartão de crédito
+          </span>
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-line text-sm text-coffee">
+            <svg class="text-bark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h4M16 13v4M14 15h4"/></svg>
+            Cartão de débito
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 md:px-8 mt-10 pt-6 border-t border-line text-center text-xs text-coffee/60">
+      © 2026 Grão &amp; Cia. Comida de verdade, do campo para a sua mesa.
+    </div>
+  </footer>
+
+</main>
+  <script src="script.js"></script>
+</body>
+</html>
